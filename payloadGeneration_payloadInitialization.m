@@ -9,5 +9,8 @@ function out_seq = payloadGeneration_payloadInitialization(MIB,SFN,HRF, SSB_Bits
     % or [<6th bit> <5th bit> <4th bit>] of candidate SS/PBCH block index if Lmax_ = 64
     end
     binSFN = decimalToBinaryVector(SFN);
+        while length(binSFN)<4 % adding zeros to left side of SFN
+        binSFN = [0 binSFN]; % to be able to determine 4 bits
+        end
     out_seq = [MIB binSFN((end-3):end) HRF SSB_Bits];
 end
