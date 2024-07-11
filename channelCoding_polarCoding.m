@@ -8,7 +8,7 @@ function out_seq = channelCoding_polarCoding(in_seq)
     K = 56;
     N = 512;
 
-    Q_0_Nmax = matfile("PbchGenerator\ReliabilityAndPolarCodingSeqIndexes.mat").ReliabilityAndPolarSeqIndexes.';
+    Q_0_Nmax = matfile("ReliabilityAndPolarCodingSeqIndexes.mat").ReliabilityAndPolarSeqIndexes.';
     j = 1;
     for i = 1:1024
         if Q_0_Nmax(i)<N
